@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: 1
   tree: 0
+  cloudSpeed: -0.25
+  treeSpeed: 0
 --- !u!61 &8438805364684614941
 BoxCollider2D:
   m_ObjectHideFlags: 0

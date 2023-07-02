@@ -6,6 +6,13 @@ public class DroneCollider : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public GameObject drone;
+
+    public bool dead;
+
+    public void Start()
+    {
+        dead = false;
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision happened apparently");
@@ -15,6 +22,7 @@ public class DroneCollider : MonoBehaviour
             drone.SetActive(false);
             Time.timeScale = 0;
             Debug.Log("Collision happened");
+            dead = true;
         }
     }
 

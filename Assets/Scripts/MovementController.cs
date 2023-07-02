@@ -6,6 +6,8 @@ public class MovementController : MonoBehaviour
 {
     public bool cloud;
     public bool tree;
+    public float cloudSpeed;
+    public float treeSpeed;
 
 
     // Start is called before the first frame update
@@ -19,12 +21,12 @@ public class MovementController : MonoBehaviour
     {
         if(cloud == true)
         {
-            gameObject.transform.Translate(-.06f, 0, 0);
+            gameObject.transform.Translate(cloudSpeed, 0, 0);
         }
         
         if(tree == true)
         {
-            gameObject.transform.Translate(-.08f, 0, 0);
+            gameObject.transform.Translate(treeSpeed, 0, 0);
         }
 
     }
