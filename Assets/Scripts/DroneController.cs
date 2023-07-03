@@ -6,6 +6,9 @@ public class DroneController : MonoBehaviour
 {
     public Transform drone;
     public BoxCollider2D droneHitbox;
+    public GameObject droneArt;
+    
+
 
     public float droneSpeed;
     void Update()
@@ -16,6 +19,7 @@ public class DroneController : MonoBehaviour
             {
                 drone.transform.Translate(0, droneSpeed, 0);
                 //Debug.Log("Drone Going Up");
+                droneArt.transform.rotation = Quaternion.identity;
             }
         }
         if (Input.GetKey(KeyCode.S))
@@ -24,6 +28,7 @@ public class DroneController : MonoBehaviour
             {
                 drone.transform.Translate(0, -droneSpeed, 0);
                 //Debug.Log("Drone Going Up");
+                droneArt.transform.rotation = Quaternion.identity;
             }
         }
         if (Input.GetKey(KeyCode.A))
@@ -32,6 +37,8 @@ public class DroneController : MonoBehaviour
             {
                 drone.transform.Translate(-droneSpeed, 0, 0);
                 //Debug.Log("Drone Going Up");
+
+                droneArt.transform.rotation = Quaternion.Euler(0, 0, 10);
             }
         }
         if (Input.GetKey(KeyCode.D))
@@ -40,9 +47,16 @@ public class DroneController : MonoBehaviour
             {
                 drone.transform.Translate(droneSpeed, 0, 0);
                 //Debug.Log("Drone Going Up");
+                droneArt.transform.rotation = Quaternion.Euler(0, 0, -10);
             }
         }
 
+        if (!Input.anyKey)
+        {
+            droneArt.transform.rotation = Quaternion.identity;
+        }
+
+        
 
 
     }
