@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpawnerController : MonoBehaviour
 {
-    public GameObject cloudSpawner;
+    public GameObject birdSpawner;
     public GameObject treeSpawner;
 
-    public GameObject cloudPrefab;
-    public GameObject treePrefab;
+    public GameObject[] birdPrefab;
+    public GameObject[] treePrefab;
 
     public float cloudSpawnMinTime;
     public float cloudSpawnMaxTime;
@@ -32,7 +32,7 @@ public class SpawnerController : MonoBehaviour
         while(gameStart == true)
         {
             yield return new WaitForSeconds(Random.Range(cloudSpawnMinTime, cloudSpawnMaxTime));
-            Instantiate(cloudPrefab, cloudSpawner.transform.position, cloudSpawner.transform.rotation);
+            Instantiate(birdPrefab[Random.Range(0, birdPrefab.Length)], birdSpawner.transform.position, birdSpawner.transform.rotation);
         }
         
     }
@@ -41,7 +41,7 @@ public class SpawnerController : MonoBehaviour
         while(gameStart == true)
         {
             yield return new WaitForSeconds(Random.Range(treeSpawnMinTime, treeSpawnMaxTime));
-            Instantiate(treePrefab, treeSpawner.transform.position, treeSpawner.transform.rotation);
+            Instantiate(treePrefab[Random.Range(0, treePrefab.Length)], treeSpawner.transform.position, treeSpawner.transform.rotation);
         }
         
     }

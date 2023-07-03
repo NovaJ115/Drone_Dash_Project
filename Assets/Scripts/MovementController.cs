@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    public bool cloud;
+    public bool bird;
     public bool tree;
-    public float cloudSpeed;
+    public float birdSpeed;
     public float treeSpeed;
 
 
@@ -19,9 +19,9 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cloud == true)
+        if(bird == true)
         {
-            gameObject.transform.Translate(cloudSpeed, 0, 0);
+            gameObject.transform.Translate(birdSpeed, 0, 0);
         }
         
         if(tree == true)
