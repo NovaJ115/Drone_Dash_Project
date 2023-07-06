@@ -159,10 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f043c44e8fd1a438bcb4199919cdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloud: 0
+  bird: 0
   tree: 1
-  cloudSpeed: 0
-  treeSpeed: -0.2
+  birdSpeed: 0
+  treeSpeed: -10
 --- !u!61 &8426239765344755804
 BoxCollider2D:
   m_ObjectHideFlags: 0

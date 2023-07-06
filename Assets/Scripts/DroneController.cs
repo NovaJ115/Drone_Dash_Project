@@ -17,43 +17,43 @@ public class DroneController : MonoBehaviour
         {
             if (drone.position.y <= 4.5)
             {
-                drone.transform.Translate(0, droneSpeed, 0);
+                drone.transform.Translate(0, droneSpeed * Time.deltaTime, 0);
                 //Debug.Log("Drone Going Up");
-                droneArt.transform.rotation = Quaternion.identity;
+                droneArt.transform.rotation = Quaternion.Euler(0, 0, -7);
             }
         }
         if (Input.GetKey(KeyCode.S))
         {
             if (drone.position.y >= -4.25)
             {
-                drone.transform.Translate(0, -droneSpeed, 0);
+                drone.transform.Translate(0, -droneSpeed * Time.deltaTime, 0);
                 //Debug.Log("Drone Going Up");
-                droneArt.transform.rotation = Quaternion.identity;
+                droneArt.transform.rotation = Quaternion.Euler(0, 0, -7);
             }
         }
         if (Input.GetKey(KeyCode.A))
         {
             if (drone.position.x >= -0)
             {
-                drone.transform.Translate(-droneSpeed, 0, 0);
+                drone.transform.Translate(-droneSpeed * Time.deltaTime, 0, 0);
                 //Debug.Log("Drone Going Up");
 
-                droneArt.transform.rotation = Quaternion.Euler(0, 0, 10);
+                droneArt.transform.rotation = Quaternion.Euler(0, 0, 7);
             }
         }
         if (Input.GetKey(KeyCode.D))
         {
             if (drone.position.x <= 15)
             {
-                drone.transform.Translate(droneSpeed, 0, 0);
+                drone.transform.Translate(droneSpeed * Time.deltaTime, 0, 0);
                 //Debug.Log("Drone Going Up");
-                droneArt.transform.rotation = Quaternion.Euler(0, 0, -10);
+                droneArt.transform.rotation = Quaternion.Euler(0, 0, -15);
             }
         }
 
         if (!Input.anyKey)
         {
-            droneArt.transform.rotation = Quaternion.identity;
+            droneArt.transform.rotation = Quaternion.Euler(0, 0, -7);
         }
 
         

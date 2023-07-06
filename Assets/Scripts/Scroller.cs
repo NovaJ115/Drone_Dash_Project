@@ -25,7 +25,7 @@ public class Scroller : MonoBehaviour
     {
 
         scrollableObject.GetComponent<SpriteRenderer>().size = new Vector2(x,y);
-        x += speed;
+        x += speed * Time.deltaTime;
 
         if(droneCollider.dead == true)
         {

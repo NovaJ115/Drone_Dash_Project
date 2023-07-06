@@ -373,7 +373,7 @@ MonoBehaviour:
   drone: {fileID: 474400690}
   droneHitbox: {fileID: 1753102943}
   droneArt: {fileID: 2084315863}
-  droneSpeed: 0.1
+  droneSpeed: 9
 --- !u!4 &474400690
 Transform:
   m_ObjectHideFlags: 0
@@ -1317,7 +1317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollableObject: {fileID: 1185461638}
-  speed: 0.05
+  speed: 7
   isDead: 0
   droneCollider: {fileID: 0}
 --- !u!1 &1286494386
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollableObject: {fileID: 1286494386}
-  speed: 0.25
+  speed: 13
   isDead: 0
   droneCollider: {fileID: 0}
 --- !u!1 &1289017089
@@ -2060,7 +2060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollableObject: {fileID: 1636775098}
-  speed: 0.15
+  speed: 8
   isDead: 0
   droneCollider: {fileID: 0}
 --- !u!1 &1753102942
@@ -2257,7 +2257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollableObject: {fileID: 1818579812}
-  speed: 0.3
+  speed: 18
   isDead: 0
   droneCollider: {fileID: 0}
 --- !u!1 &1907036429

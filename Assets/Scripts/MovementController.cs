@@ -21,12 +21,12 @@ public class MovementController : MonoBehaviour
     {
         if(bird == true)
         {
-            gameObject.transform.Translate(birdSpeed, 0, 0);
+            gameObject.transform.Translate(birdSpeed * Time.deltaTime, 0, 0);
         }
         
         if(tree == true)
         {
-            gameObject.transform.Translate(treeSpeed, 0, 0);
+            gameObject.transform.Translate(treeSpeed * Time.deltaTime, 0, 0);
         }
 
     }
