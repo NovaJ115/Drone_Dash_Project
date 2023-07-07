@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bird: 1
   tree: 0
-  birdSpeed: -10
+  birdSpeed: -17
   treeSpeed: 0
 --- !u!1001 &12487546680345644
 PrefabInstance:

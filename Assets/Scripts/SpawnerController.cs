@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SpawnerController : MonoBehaviour
 {
-    public GameObject birdSpawner;
-    public GameObject treeSpawner;
-
+    [Header("-Spawn Points-")]
+    public GameObject[] birdSpawnPoints;
+    public GameObject[] treeSpawnPoints;
+    [Header("-Hazard Prefabs-")]
     public GameObject[] birdPrefab;
     public GameObject[] treePrefab;
-
-    public float cloudSpawnMinTime;
-    public float cloudSpawnMaxTime;
+    [Header("-Spawn Time-")]
+    public float birdSpawnMinTime;
+    public float birdSpawnMaxTime;
 
     public float treeSpawnMinTime;
     public float treeSpawnMaxTime;
@@ -31,8 +32,8 @@ public class SpawnerController : MonoBehaviour
     {
         while(gameStart == true)
         {
-            yield return new WaitForSeconds(Random.Range(cloudSpawnMinTime, cloudSpawnMaxTime));
-            Instantiate(birdPrefab[Random.Range(0, birdPrefab.Length)], birdSpawner.transform.position, birdSpawner.transform.rotation);
+            yield return new WaitForSeconds(Random.Range(birdSpawnMinTime, birdSpawnMaxTime));
+            Instantiate(birdPrefab[Random.Range(0, birdPrefab.Length)], birdSpawnPoints[Random.Range(0,birdSpawnPoints.Length)].transform.position, birdSpawnPoints[0].transform.rotation);
         }
         
     }
@@ -41,7 +42,7 @@ public class SpawnerController : MonoBehaviour
         while(gameStart == true)
         {
             yield return new WaitForSeconds(Random.Range(treeSpawnMinTime, treeSpawnMaxTime));
-            Instantiate(treePrefab[Random.Range(0, treePrefab.Length)], treeSpawner.transform.position, treeSpawner.transform.rotation);
+            Instantiate(treePrefab[Random.Range(0, treePrefab.Length)], treeSpawnPoints[Random.Range(0, treeSpawnPoints.Length)].transform.position, treeSpawnPoints[Random.Range(0, treeSpawnPoints.Length)].transform.rotation);
         }
         
     }

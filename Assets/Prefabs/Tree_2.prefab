@@ -104,7 +104,7 @@ MonoBehaviour:
   bird: 0
   tree: 1
   birdSpeed: 0
-  treeSpeed: -10
+  treeSpeed: -12
 --- !u!61 &4091135092401734023
 BoxCollider2D:
   m_ObjectHideFlags: 0
