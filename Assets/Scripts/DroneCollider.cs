@@ -7,6 +7,8 @@ public class DroneCollider : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject drone;
 
+    public QuestionManager questionManager;
+
     public bool dead;
 
     public void Start()
@@ -23,6 +25,11 @@ public class DroneCollider : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("Collision happened");
             dead = true;
+        }
+        if (collision.gameObject.CompareTag("Question"))
+        {
+            questionManager.OpenQuestionMenu();
+            Destroy(collision.gameObject);
         }
     }
 

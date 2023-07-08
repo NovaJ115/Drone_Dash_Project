@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    public bool bird;
-    public bool tree;
-    public float birdSpeed;
-    public float treeSpeed;
+    public float speed;
 
 
     // Start is called before the first frame update
@@ -19,15 +16,6 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bird == true)
-        {
-            gameObject.transform.Translate(birdSpeed * Time.deltaTime, 0, 0);
-        }
-        
-        if(tree == true)
-        {
-            gameObject.transform.Translate(treeSpeed * Time.deltaTime, 0, 0);
-        }
-
+        gameObject.transform.Translate(-speed * Time.deltaTime, 0, 0);
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class QuestionButtons : MonoBehaviour
 {
-    public QuestionCountdown questionCountdown;
+    public QuestionManager questionManager;
     public void ButtonPress()
     {
         Time.timeScale = 1;
-        questionCountdown.questionMenu.SetActive(false);
-        questionCountdown.timeAmount = questionCountdown.time;
+        questionManager.questionMenu.SetActive(false);
+        
     }
 
 }

@@ -47,10 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f043c44e8fd1a438bcb4199919cdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: 1
-  tree: 0
-  birdSpeed: -15
-  treeSpeed: 0
+  speed: 15
 --- !u!1001 &4664836358922064012
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3839523225972088951}
   - component: {fileID: 3777982010850333004}
   - component: {fileID: 3189222624472806757}
-  - component: {fileID: 2546638199840546362}
   - component: {fileID: 8688040447140341395}
   m_Layer: 0
   m_Name: Tree_5
@@ -101,10 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f043c44e8fd1a438bcb4199919cdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: 0
-  tree: 1
-  birdSpeed: 0
-  treeSpeed: -15
+  speed: 15
 --- !u!61 &3189222624472806757
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,27 +127,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7909107, y: 8.487634}
   m_EdgeRadius: 0
---- !u!50 &2546638199840546362
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3839523225972088950}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!95 &8688040447140341395
 Animator:
   serializedVersion: 4
