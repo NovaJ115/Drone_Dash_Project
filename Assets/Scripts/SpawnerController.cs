@@ -8,10 +8,12 @@ public class SpawnerController : MonoBehaviour
     public GameObject[] birdSpawnPoints;
     public GameObject[] treeSpawnPoints;
     public GameObject[] questionCoinSpawnPoints;
+    public GameObject[] scoreCoinSpawnPoints;
     [Header("-Hazard Prefabs-")]
     public GameObject[] birdPrefab;
     public GameObject[] treePrefab;
     public GameObject questionCoinPrefab;
+    public GameObject scoreCoinPrefab;
     [Header("-Spawn Time-")]
     public float birdSpawnMinTime;
     public float birdSpawnMaxTime;
@@ -19,6 +21,8 @@ public class SpawnerController : MonoBehaviour
     public float treeSpawnMaxTime;
     public float questionCoinSpawnMinTime;
     public float questionCoinSpawnMaxTime;
+    public float scoreCoinSpawnMinTime;
+    public float scoreCoinSpawnMaxTime;
     [Header("Has the game started?")]
     public bool gameStart;
 
@@ -29,6 +33,7 @@ public class SpawnerController : MonoBehaviour
         StartCoroutine(CloudSpawn());
         StartCoroutine(TreeSpawn());
         StartCoroutine(QuestionCoinSpawn());
+        StartCoroutine(ScoreCoinSpawn());
     }
 
     public IEnumerator CloudSpawn()
@@ -56,6 +61,16 @@ public class SpawnerController : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(questionCoinSpawnMinTime, questionCoinSpawnMaxTime));
             Instantiate(questionCoinPrefab, questionCoinSpawnPoints[Random.Range(0, questionCoinSpawnPoints.Length)].transform.position, questionCoinSpawnPoints[Random.Range(0, questionCoinSpawnPoints.Length)].transform.rotation);
+        }
+
+    }
+
+    public IEnumerator ScoreCoinSpawn()
+    {
+        while (gameStart == true)
+        {
+            yield return new WaitForSeconds(Random.Range(scoreCoinSpawnMinTime, scoreCoinSpawnMaxTime));
+            Instantiate(scoreCoinPrefab, scoreCoinSpawnPoints[Random.Range(0, scoreCoinSpawnPoints.Length)].transform.position, scoreCoinSpawnPoints[Random.Range(0, scoreCoinSpawnPoints.Length)].transform.rotation);
         }
 
     }

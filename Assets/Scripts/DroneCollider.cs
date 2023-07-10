@@ -9,6 +9,8 @@ public class DroneCollider : MonoBehaviour
 
     public QuestionManager questionManager;
 
+    public ScoreManager scoreManager;
+
     public bool dead;
 
     public void Start()
@@ -30,6 +32,12 @@ public class DroneCollider : MonoBehaviour
         {
             questionManager.OpenQuestionMenu();
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            scoreManager.score += 100;
+            Destroy(collision.gameObject);
+            scoreManager.StartOneHundred();
         }
     }
 

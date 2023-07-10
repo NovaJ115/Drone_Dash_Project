@@ -17,6 +17,7 @@ public class QuestionButtons : MonoBehaviour
         }
         if (incorrect)
         {
+            questionManager.TheIncorrectAnswer();
             StartCoroutine(AnswerIncorrect());
         }
         
@@ -32,12 +33,8 @@ public class QuestionButtons : MonoBehaviour
     public IEnumerator AnswerIncorrect()
     {
         this.GetComponent<Image>().color = Color.red;
-
-
-        yield return new WaitForSecondsRealtime(2);
-        Time.timeScale = 1;
+        yield return new WaitForSecondsRealtime(1.99f);
         this.GetComponent<Image>().color = Color.white;
-        questionManager.questionMenu.SetActive(false);
     }
 
 }
