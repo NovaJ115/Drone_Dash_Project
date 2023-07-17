@@ -38,6 +38,7 @@ public class DroneCollider : MonoBehaviour
             scoreManager.score += 100;
             Destroy(collision.gameObject);
             scoreManager.StartOneHundred();
+            scoreManager.coinAmount += 1;
         }
     }
 

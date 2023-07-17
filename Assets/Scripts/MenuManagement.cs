@@ -5,7 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuManagement : MonoBehaviour
 {
+    Scene currentScene;
 
+    string sceneName;
+
+    public GameObject shopMenu;
+    public void Start()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+    }
     public void Reset()
     {
         Time.timeScale = 1;
@@ -15,10 +24,34 @@ public class MenuManagement : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if(sceneName == "MainScene")
         {
-            Reset();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Time.timeScale = 1;
+                Reset();
+            }
         }
+        
     }
 
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainScene");
+    }
+    public void ReturnToMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OpenShop()
+    {
+        shopMenu.SetActive(true);
+    }
+    public void CloseShop()
+    {
+        shopMenu.SetActive(false);
+    }
 }

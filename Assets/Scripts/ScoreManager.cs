@@ -14,9 +14,12 @@ public class ScoreManager : MonoBehaviour
     public GameObject oneHundredFiftyScoreText;
     public GameObject minusFiftyScoreText;
 
+    public TextMeshProUGUI coinAmontText;
+    public int coinAmount;
+
     public void Start()
     {
-        
+        coinAmount = PlayerPrefs.GetInt("Coins");
     }
 
     void Update()
@@ -25,6 +28,9 @@ public class ScoreManager : MonoBehaviour
         
         score += scorePerSecond * Time.deltaTime;
 
+        PlayerPrefs.SetInt("Coins", coinAmount);
+
+        coinAmontText.text = ": " + PlayerPrefs.GetInt("Coins");
     }
 
     public IEnumerator OneHundredScore()
@@ -61,5 +67,7 @@ public class ScoreManager : MonoBehaviour
         minusFiftyScoreText.SetActive(true);
         StartCoroutine(MinusFiftyScore());
     }
+
+   
 
 }

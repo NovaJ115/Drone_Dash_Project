@@ -8,6 +8,14 @@ public class QuestionManager : MonoBehaviour
 {
     public GameObject questionMenu;
 
+    
+
+    public TextMeshProUGUI questionText;
+    public TextMeshProUGUI option1Text;
+    public TextMeshProUGUI option2Text;
+    public TextMeshProUGUI option3Text;
+    public TextMeshProUGUI option4Text;
+
     public GameObject resumeTimerScreen;
     public TextMeshProUGUI timerText;
     public float timeAmount;
@@ -16,7 +24,11 @@ public class QuestionManager : MonoBehaviour
 
     public float time;
 
+    public GameObject[] theQuestions;
+
     public ScoreManager scoreManager;
+
+    public int currentQuestion;
 
     public void Start()
     {
@@ -26,6 +38,12 @@ public class QuestionManager : MonoBehaviour
     public void OpenQuestionMenu()
     {
         questionMenu.SetActive(true);
+        currentQuestion = Random.Range(0, theQuestions.Length);
+        questionText.text = theQuestions[currentQuestion].GetComponent<Question>().question;
+        option1Text.text = theQuestions[currentQuestion].GetComponent<Question>().option1;
+        option2Text.text = theQuestions[currentQuestion].GetComponent<Question>().option2;
+        option3Text.text = theQuestions[currentQuestion].GetComponent<Question>().option3;
+        option4Text.text = theQuestions[currentQuestion].GetComponent<Question>().option4;
         Time.timeScale = 0;
 
     }
