@@ -8,8 +8,6 @@ public class QuestionManager : MonoBehaviour
 {
     public GameObject questionMenu;
 
-    
-
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI option1Text;
     public TextMeshProUGUI option2Text;
@@ -30,6 +28,8 @@ public class QuestionManager : MonoBehaviour
 
     public int currentQuestion;
 
+    public QuestionButtons questionButtons;
+
     public void Start()
     {
         countdownActive = false;
@@ -37,6 +37,7 @@ public class QuestionManager : MonoBehaviour
     }
     public void OpenQuestionMenu()
     {
+        ResetButtons();
         questionMenu.SetActive(true);
         currentQuestion = Random.Range(0, theQuestions.Length);
         questionText.text = theQuestions[currentQuestion].GetComponent<Question>().question;
@@ -52,8 +53,6 @@ public class QuestionManager : MonoBehaviour
         resumeTimerScreen.SetActive(true);
         
     }
-
-
     public void TheCorrectAnswer()
     {
         StartCoroutine(CorrectAnswer());
@@ -101,5 +100,13 @@ public class QuestionManager : MonoBehaviour
         Time.timeScale = 1;
         scoreManager.StartMinusFifty();
         Debug.Log("Coroutine Finished");
+    }
+
+    public void ResetButtons()
+    {
+        questionButtons.button1.GetComponent<Button>().enabled = true;
+        questionButtons.button2.GetComponent<Button>().enabled = true;
+        questionButtons.button3.GetComponent<Button>().enabled = true;
+        questionButtons.button4.GetComponent<Button>().enabled = true;
     }
 }
