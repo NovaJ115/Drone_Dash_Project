@@ -54,4 +54,13 @@ public class MenuManagement : MonoBehaviour
     {
         shopMenu.SetActive(false);
     }
+
+    public void ResetShop()
+    {
+        PlayerPrefs.SetInt("OrangeDroneBought", 0);
+        PlayerPrefs.SetInt("BlueDroneBought", 0);
+        PlayerPrefs.SetInt("GoldenDroneBought", 0);
+        PlayerPrefs.SetInt("Coins", 0);
+    }
+
 }

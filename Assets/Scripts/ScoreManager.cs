@@ -17,37 +17,57 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI coinAmontText;
     public int coinAmount;
 
+    public float highScore;
+    public float theCurrentHighScore;
+
+    public DroneCollider droneCollider;
     public void Start()
     {
         coinAmount = PlayerPrefs.GetInt("Coins");
+        if (PlayerPrefs.HasKey("Highscore"))
+        {
+            highScore = PlayerPrefs.GetFloat("Highscore");
+        }
     }
 
     void Update()
     {
         scoreText.text = ("Score : " + Mathf.RoundToInt(score));
+        if (droneCollider.dead == false)
+        {
+            score += scorePerSecond * Time.deltaTime;
+        }
         
-        score += scorePerSecond * Time.deltaTime;
 
         PlayerPrefs.SetInt("Coins", coinAmount);
 
         coinAmontText.text = ": " + PlayerPrefs.GetInt("Coins");
+
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetFloat("Highscore", Mathf.RoundToInt(highScore));
+        }
+
+        theCurrentHighScore = PlayerPrefs.GetFloat("Highscore");
+        Debug.Log(theCurrentHighScore);
     }
 
     public IEnumerator OneHundredScore()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         oneHundredScoreText.SetActive(false);
         StopAllCoroutines();
     }
     public IEnumerator OneHundredFiftyScore()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         oneHundredFiftyScoreText.SetActive(false);
         StopAllCoroutines();
     }
     public IEnumerator MinusFiftyScore()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         minusFiftyScoreText.SetActive(false);
         StopAllCoroutines();
     }

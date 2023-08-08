@@ -30,6 +30,12 @@ public class QuestionManager : MonoBehaviour
 
     public QuestionButtons questionButtons;
 
+    public AudioSource correctSound;
+    public AudioSource incorrectSound;
+    public AudioSource timerClick;
+
+    public DroneCollider droneCollider;
+
     public void Start()
     {
         countdownActive = false;
@@ -37,6 +43,7 @@ public class QuestionManager : MonoBehaviour
     }
     public void OpenQuestionMenu()
     {
+        droneCollider.droneFlyingSound.Stop();
         ResetButtons();
         questionMenu.SetActive(true);
         currentQuestion = Random.Range(0, theQuestions.Length);
@@ -65,40 +72,50 @@ public class QuestionManager : MonoBehaviour
     public IEnumerator CorrectAnswer()
     {
         
+        correctSound.Play();
         yield return new WaitForSecondsRealtime(2);
         
         questionMenu.SetActive(false);
         resumeTimerScreen.SetActive(true);
         timerText.text = "Resume in: 3";
+        timerClick.Play();
         yield return new WaitForSecondsRealtime(1);
+        timerClick.Play();
         timerText.text = "Resume in: 2";
         yield return new WaitForSecondsRealtime(1);
+        timerClick.Play();
         timerText.text = "Resume in: 1";
         yield return new WaitForSecondsRealtime(1);
         scoreManager.score += 150;
+        scoreManager.coinAmount += 3;
         resumeTimerScreen.SetActive(false);
         Time.timeScale = 1;
         scoreManager.StartOneHundredFifty();
+        droneCollider.droneFlyingSound.Play();
         Debug.Log("Coroutine Finished");
     }
 
     public IEnumerator IncorrectAnswer()
     {
-
+        incorrectSound.Play();
         yield return new WaitForSecondsRealtime(2);
 
         questionMenu.SetActive(false);
         resumeTimerScreen.SetActive(true);
         timerText.text = "Resume in: 3";
+        timerClick.Play();
         yield return new WaitForSecondsRealtime(1);
+        timerClick.Play();
         timerText.text = "Resume in: 2";
         yield return new WaitForSecondsRealtime(1);
+        timerClick.Play();
         timerText.text = "Resume in: 1";
         yield return new WaitForSecondsRealtime(1);
         scoreManager.score -= 50;
         resumeTimerScreen.SetActive(false);
         Time.timeScale = 1;
         scoreManager.StartMinusFifty();
+        droneCollider.droneFlyingSound.Play();
         Debug.Log("Coroutine Finished");
     }
 

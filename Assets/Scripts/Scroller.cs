@@ -39,23 +39,26 @@ public class Scroller : MonoBehaviour
         {
             speed = 0;
         }
-
-        if (Input.GetKeyDown(KeyCode.D))
+        if(isDead == false)
         {
-            speed += 4;
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                speed += 4;
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                speed = originalSpeed;
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                speed -= 2;
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                speed = originalSpeed;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            speed = originalSpeed;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            speed -= 2;
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            speed = originalSpeed;
-        }
+        
 
 
     }

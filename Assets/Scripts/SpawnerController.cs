@@ -75,4 +75,12 @@ public class SpawnerController : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        if(gameStart == false)
+        {
+            StopAllCoroutines();
+        }
+    }
+
 }

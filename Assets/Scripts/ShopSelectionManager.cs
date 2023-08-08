@@ -19,6 +19,9 @@ public class ShopSelectionManager : MonoBehaviour
     public bool goldenDroneSkin;
 
     public string theActiveSkin;
+    public string droneSkin;
+
+    
     public void SetTextActive()
     {
         shopManager.DeselectAllDrones();
@@ -59,6 +62,8 @@ public class ShopSelectionManager : MonoBehaviour
         {
             PlayerPrefs.SetString("DroneSkin", "Golden");
         }
+
+
         
     }
 

@@ -8,9 +8,10 @@ public class DroneController : MonoBehaviour
     public BoxCollider2D droneHitbox;
     public GameObject droneArt;
     
-
-
     public float droneSpeed;
+
+    
+
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -56,7 +57,7 @@ public class DroneController : MonoBehaviour
             droneArt.transform.rotation = Quaternion.Euler(0, 0, -7);
         }
 
-        
+        droneArt.gameObject.GetComponent<Transform>().transform.position = droneHitbox.gameObject.GetComponent<Transform>().transform.position;
         
 
     }
