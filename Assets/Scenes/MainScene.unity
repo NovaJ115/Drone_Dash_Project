@@ -5432,9 +5432,9 @@ MonoBehaviour:
   birdSpawnMaxTime: 5
   treeSpawnMinTime: 1.5
   treeSpawnMaxTime: 5
-  questionCoinSpawnMinTime: 10
+  questionCoinSpawnMinTime: 8
   questionCoinSpawnMaxTime: 17
-  scoreCoinSpawnMinTime: 7
+  scoreCoinSpawnMinTime: 5
   scoreCoinSpawnMaxTime: 12
   gameStart: 0
 --- !u!4 &1069255545
